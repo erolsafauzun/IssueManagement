@@ -6,6 +6,7 @@ public class GeneralEnumerationDefinitions {
 
         OPEN,
         IN_PROGRESS,
+        IN_REVIEW,
         CLOSED,
         RESOLVED
     }

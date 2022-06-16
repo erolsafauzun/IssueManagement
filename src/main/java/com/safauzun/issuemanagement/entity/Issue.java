@@ -26,6 +26,7 @@ public class Issue extends BaseEntity{
     private String details;
 
     @Column(name = "DATE")
+    @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
     @Column(name = "ISSUE_STATUS")
@@ -36,5 +37,9 @@ public class Issue extends BaseEntity{
     @ManyToOne(optional = true, fetch = FetchType.LAZY)
     //Bir çok issue, bir user ile ilişkilendirilebilir
     private User assignee;
+
+    @JoinColumn(name = "PROJECT_ID")
+    @ManyToOne(optional = true, fetch = FetchType.LAZY)
+    private Project project;
 
 }
